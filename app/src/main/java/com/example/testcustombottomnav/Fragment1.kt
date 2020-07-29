@@ -12,7 +12,7 @@ import androidx.fragment.app.FragmentTransaction
 
 
 class Fragment1 : Fragment() {
-    var count = 0;
+    var count = 0
     private lateinit var rootView: View
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,9 +34,6 @@ class Fragment1 : Fragment() {
             val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
             transaction.add(R.id.profile_nav_host, newFragment).addToBackStack(instanceId)
             transaction.commit()
-
-//            val pushedFragment = PushedFragment()
-//            requireActivity().supportFragmentManager.beginTransaction().add(R.id.fragmnt1Container, pushedFragment).commit()
         }
 
         return this.rootView

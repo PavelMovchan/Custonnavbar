@@ -27,9 +27,6 @@ class Fragment2 : Fragment() {
             val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
             transaction.add(R.id.search_nav_host, newFragment).addToBackStack(instanceId)
             transaction.commit()
-
-//            val pushedFragment = PushedFragment()
-//            requireActivity().supportFragmentManager.beginTransaction().add(R.id.fragmnt1Container, pushedFragment).commit()
         }
         return this.rootView
     }
