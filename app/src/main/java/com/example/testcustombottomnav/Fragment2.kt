@@ -19,13 +19,11 @@ class Fragment2 : Fragment() {
         val rootView = inflater.inflate(R.layout.fragment2, container, false)
         this.rootView = rootView
         val button1 = rootView.findViewById<Button>(R.id.button2)
-        val fm: FragmentManager = requireActivity().supportFragmentManager
-        val instanceId = fm.fragments.count().toString()
         button1.setOnClickListener {
             val newFragment = PushedFragment()
             newFragment.containerIdForPush = R.id.search_nav_host
             val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.add(R.id.search_nav_host, newFragment).addToBackStack(instanceId)
+            transaction.add(R.id.search_nav_host, newFragment).addToBackStack(null)
             transaction.commit()
         }
         return this.rootView

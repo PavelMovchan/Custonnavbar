@@ -32,8 +32,7 @@ class PushedFragment : Fragment() {
         if (containerIdForPush == R.id.search_nav_host) {
             text = "from search";
         }
-        val fm: FragmentManager = requireActivity().supportFragmentManager
-        val instanceId = fm.fragments.count().toString()
+
         textView.text = info.toString() + text
         button.setOnClickListener {
             val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
@@ -47,7 +46,7 @@ class PushedFragment : Fragment() {
             val newFragment = PushedFragment()
             newFragment.containerIdForPush = containerIdForPush
             val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.add(containerIdForPush, newFragment).addToBackStack(instanceId)
+            transaction.add(containerIdForPush, newFragment).addToBackStack(null)
             transaction.commit()
             info += 1
         }

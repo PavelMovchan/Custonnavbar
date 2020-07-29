@@ -26,13 +26,11 @@ class Fragment1 : Fragment() {
         textView.text = count.toString()
 
         val button1 = rootView.findViewById<Button>(R.id.button1)
-        val fm: FragmentManager = requireActivity().supportFragmentManager
-        val instanceId = fm.fragments.count().toString()
         button1.setOnClickListener {
             val newFragment = PushedFragment()
             newFragment.containerIdForPush = R.id.profile_nav_host
             val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.add(R.id.profile_nav_host, newFragment).addToBackStack(instanceId)
+            transaction.add(R.id.profile_nav_host, newFragment).addToBackStack(null)
             transaction.commit()
         }
 
